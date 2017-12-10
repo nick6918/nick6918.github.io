@@ -1,0 +1,21 @@
+#__nuxt{
+    height: 100vh;
+    font-size: 14px;
+    
+}
+h1,h2,h3,h4,h5{
+    font-weight: 500;
+}
+ul{
+    margin: 0px;
+    padding: 0px;
+}
+li{
+    list-style: none;
+}
+.c-1{
+    color: #fff;
+}
+.c-2{
+    color: #898989;
+}
