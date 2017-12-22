@@ -18,5 +18,9 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Finger+Paint|PT+Sans:400,700" rel="stylesheet">
 	<link rel="stylesheet" href="{{ "/assets/fonts/font-awesome/css/font-awesome.min.css" | prepend: site.baseurl }}">
-	<link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
+	<!-- For styles with static names... -->
+	<link href="{{ "/assets/css/style.css" | relative_url }}" rel="stylesheet">
+	<!-- For documents/pages whose URLs can change... -->
+	[{{ page.title }}]("{{ page.url | relative_url }}")
+<!-- 	<link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}"> -->
 </head>
