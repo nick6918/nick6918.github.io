@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<article class="page-article">
+  <div class="wrap-content">
+    <header class="page-header">
+      <p class="page-no"> <span>{% if page.number %}No.{{page.number}}{% endif %}</span> </p>
+      <h1 id='title' class="page-title">{{page.title}}</h1>
+      <div class="page-date"><span>{% if page.number %}&nbsp;DATE: {{page.date | date: '%Y/%m/%d  '}}  Total: {{page.time}}&nbsp;{% endif %}</span></div>
+    </header>
+    <div class="page-content">
+      <audio src= {{page.audio}} controls="controls">浏览器似乎不支持在线播放， 请下载后收听。</audio> 
+      {% if page.img %}
+      <img class="page-img" src={{ "/assets/img/" | prepend: site.baseurl | append : page.img}} alt="{{page.title}}">
+      {% endif %}
+      {{page.content | markdownify}}
+    </div>
+    {% include disqus.html %}
+  </div>
+</article>

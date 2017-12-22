@@ -1,120 +1,35 @@
-<!DOCTYPE html>
-<html data-n-head-ssr data-n-head="">
+---
+layout: default
+---
 
-<head>
-    <meta data-n-head="true" charset="utf-8" />
-    <meta data-n-head="true" name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
-    <link rel="stylesheet" type="text/css" href="/css/fontello.css">
-    <style>
-        .h-100[data-v-287897db] {
-            background: #009bff
-        }
+{% for post in paginator.posts %}
+<article class="main-article">
+  <div class="wrap-content">
+    <header class="header-article">
+      <p class="page-no"> <span>{% if post.number %}No.{{post.number}}{% endif %}</span> </p>
+      <h2 id='title' class="title-article"><a href="{{post.url | prepend: site.baseurl}}">{{post.title}}</a></h2>
+      <div class="page-date"><span>&nbsp;DATE: {{post.date | date: '%Y/%m/%d  '}}  Total: {{post.time}}&nbsp;</span></div>
+    </header>
+    {% if post.img %}
+       <img class="post-image" src={{ "/assets/img/" | prepend: site.baseurl | append: post.img }} alt="{{post.title}}">
+    {% endif %}
+    <p class='header-content'><i>《口说无凭》是一档90后商业技术跨界播客， 在这里，几个90后谈技术， 谈市场， 也谈创业， “口说无凭”， 开心就好。 如果能对听众的你有所启发，那就再好不过了。</i></p>
+    <p>{{post.description}} </p>
+    <p><br /></p>
+    <div class='tools'> <a href="{{post.audio}}" class='button'><img witdh='27px' height='27px' class='icon' src='/fresh/assets/img/run.jpg' /> 在线收听</a><a class='button' href="{{post.url | prepend: site.baseurl}}"><img witdh='27px' height='27px' class='icon' src='/fresh/assets/img/more.jpg' /> 查看详情</a><a class='button' href="{{post.audio}}" download='{{post.name}}.mp3'><img witdh='27px' height='27px' class='icon' src='/fresh/assets/img/down.jpg' /> 下载到本地</a></div>
+  </div>
+</article>
+{% endfor %}
 
-        .logo[data-v-287897db] {
-            width: 100px;
-            height: 100px;
-            background: #ccc
-        }
-
-        section[data-v-9880960c] {
-            border-top: 2px solid #009bff
-        }
-
-        h3[data-v-9880960c] {
-            font-size: 30px;
-            position: relative;
-            padding: 0 10px
-        }
-
-        h3[data-v-9880960c]:before {
-            left: -25px
-        }
-
-        h3[data-v-9880960c]:after,
-        h3[data-v-9880960c]:before {
-            content: "";
-            width: 25px;
-            height: 4px;
-            position: absolute;
-            background: #000;
-            top: 50%;
-            -webkit-transform: translateY(-50%);
-            transform: translateY(-50%)
-        }
-
-        h3[data-v-9880960c]:after {
-            right: -25px
-        }
-
-        .time[data-v-9880960c] {
-            background: #009bff;
-            padding: 5px 10px;
-            color: #fff
-        }
-
-        ul[data-v-9880960c] {
-            max-width: 500px;
-            font-size: 14px
-        }
-
-        ul li+li[data-v-9880960c] {
-            padding: 0 0 0 50px
-        }
-
-        ul li .icon[data-v-9880960c] {
-            font-size: 30px;
-            color: #009bff
-        }
-
-        .des[data-v-9880960c] {
-            color: #898989
-        }
-    </style>
-</head>
-
-<body data-n-head="">
-    <div id="__nuxt" data-server-rendered="true">
-        <div class="nuxt-progress" style="width:0%;height:2px;background-color:#3B8070;opacity:0;"></div>
-        <div class="d-flex h-100">
-            <section class="w-25 h-100 d-flex flex-column pt-4" data-v-287897db>
-                <div class="logo rounded-circle align-self-center" data-v-287897db></div>
-                <h1 class="align-self-center pt-3 c-1" data-v-287897db>口说无凭</h1>
-                <h4 class="align-self-center c-1" data-v-287897db>
-                    <em data-v-287897db>BizTalk90</em>
-                </h4>
-                <footer class="mt-auto pb-5 mb-5 color: #fff;" data-v-287897db>
-                    Host @Nick x @Gary
-                </footer>
-            </section>
-            <section class="container px-0">
-                {% for post in paginator.posts %}
-                <section class="d-flex flex-column w-100 px-4 mx-auto pt-2" data-v-9880960c>
-                    <span class="c-2" data-v-9880960c>No.1</span>
-                    <h3 class="align-self-center" data-v-9880960c>{{ post.title }}?</h3>
-                    <span class="time align-self-center my-2" data-v-9880960c>Date: {{ post.meta.time }}</span>
-                    <p class="des align-self-center py-2" data-v-9880960c>{{ post.summary }}</p>
-                    <div class="content align-self-center py-2" data-v-9880960c> {{ post.summary }}</div>
-                    <ul class="d-flex justify-content-between mx-auto mb-0" data-v-9880960c>
-                        <li class="d-flex justify-content-center align-items-center" data-v-9880960c>
-                            <span class="icon icon-play-circled2" data-v-9880960c></span>
-                            <span data-v-9880960c><a href="{{post.audio.online}}">在线收听</a></span>
-                        </li>
-                        <li class="d-flex justify-content-center align-items-center" data-v-9880960c>
-                            <span class="icon icon-attention-circled" data-v-9880960c></span>
-                            <span data-v-9880960c>查看详情</span>
-                        </li>
-                        <li class="d-flex justify-content-center align-items-center" data-v-9880960c>
-                            <span class="icon icon-down-circled2" data-v-9880960c></span>
-                            <span data-v-9880960c><a href="{{post.audio.download}}">下载到本地</a> </span>
-                        </li>
-                    </ul>
-                </section>
-                {% endfor %}
-            </section>
-        </div>
-    </div>
-</body>
-
-</html>
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="previous"><i class="fa fa-chevron-left" aria-hidden="true"></i> Previous</a>
+  {% else %}
+    <span class="previous"><i class="fa fa-chevron-left" aria-hidden="true"></i> Previous</span>
+  {% endif %}
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" class="next">Next <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+  {% else %}
+    <span class="next ">Next <i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+  {% endif %}
+</div>
