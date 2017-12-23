@@ -1,8 +1,7 @@
 # Profile information
 name: 口说无凭
 title: BizTalk90, a Chinese podcast relevant to technology, business and market.
-description: BizTalk90, a Chinese podcast relevant to technology, business and market.
-permalink: ':title/'
+description: 口说无凭 BizTalk90
 baseurl:  # the subpath of your site, e.g. /blog
 url: "https://nick6918.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
