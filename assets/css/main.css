@@ -892,7 +892,8 @@ pre code {
 }
 
 .button {
-  padding-right: 70px;
+  padding-right: 5%;
+  padding-left: 5%;
 }
 
 .icon {
@@ -1051,6 +1052,11 @@ img.post-image, img.page-img {
 }
 
 @media screen and (max-width: 960px) {
+  .button {
+    padding-right: 1%;
+    padding-left: 1%;
+  }
+
   .sidebar {
     width: 16rem;
   }
