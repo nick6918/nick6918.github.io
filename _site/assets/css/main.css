@@ -1055,13 +1055,13 @@ img.post-image, img.page-img {
   padding-left: 0;
 }
 
-.myname {
-  margin-bottom: 0;
-}
-
 #personal {
   text-align: left;
   padding-bottom: 0;
+}
+
+.myname {
+  margin-bottom: 0.8rem;
 }
 
 @media screen and (max-width: 960px) {
