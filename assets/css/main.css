@@ -1051,6 +1051,19 @@ img.post-image, img.page-img {
   background-color: #1bdc9b;
 }
 
+#first-icon {
+  padding-left: 0;
+}
+
+.myname {
+  margin-bottom: 0;
+}
+
+#personal {
+  text-align: left;
+  padding-bottom: 0;
+}
+
 @media screen and (max-width: 960px) {
   .button {
     padding-right: 1%;
